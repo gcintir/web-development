@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+    <style>
+        .email-text {
+            color: gray;
+            margin-bottom: 5px;
+        }
+        .email-input {
+            width: 415px;
+            height: 25px;
+            border: 2px solid gray;
+            border-radius: 10px;
+            outline: none;
+        }
+        .agree-text {
+            color: gray;
+            font-size: large;
+        }
+        .agree-button {
+            width: 425px;
+            color: whitesmoke;
+            background-color: #0072b1;
+            border-width: 0px;
+            font-size: large;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .dog-image-search-bar {
+            width: 500px;
+            height: 40px;
+            font-size: large;
+            margin-left: 600px;
+            border-width: 0px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            margin-bottom: 10px;
+            outline: none;
+            transition: 0.25s box-shadow;
+        }
+        .dog-image-search-bar:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Increase shadow size on hover */
+        }
+        .dog-image-search-bar::placeholder {
+            text-align: center;
+            font-size: medium;
+        }
+
+        img {
+            vertical-align: top;
+        }
+        .dog-image-view-1 {
+            width: 200px;
+            border-radius: 15px;
+        } .dog-image-view-2 {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-left: 20px;
+        }
+        .dog-image-view-3 {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p class="email-text">
+        Email
+    </p>
+    <input class="email-input" type="text">
+    <p class="agree-text">
+        By clicking Agree & Join, you agree to the Privacy Policy
+    </p>
+    <button class="agree-button">
+        Agree & Join
+    </button>
+    <hr>
+    <input class="dog-image-search-bar" type="text" placeholder="Search Dog images or type Dog image URL">
+    <hr>
+    <img class="dog-image-view-1" src="images/dog.jpg" alt="">
+    <img class="dog-image-view-2" src="images/dog.jpg" alt="">
+    <img class="dog-image-view-3" src="images/dog.jpg" alt="">
+</body>
+</html>
