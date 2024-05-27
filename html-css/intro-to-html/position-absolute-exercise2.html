@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position</title>
+</head>
+
+<body>
+    <div style="
+        padding: 10px;
+        ">
+        <div style="
+            display: inline-block;
+            position: relative;
+            border: 1px solid black;
+            ">
+            <img style="
+                width: 400px;
+            " src="images/gomlek.jpg" alt="">
+            <div style="
+                position: absolute;
+                top: 10px;
+                right: 0;
+                background-color: black;
+                color: white;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+            ">
+                20% OFF
+            </div>
+
+            <div style="
+                background-color: rgb(230, 230, 230, 0.6);
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 400px;
+                height: 180px;
+            ">
+                <div style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                padding-top: 65px;
+            ">
+                    <button style="
+                background-color: white;
+                color: black;
+                border: 1px solid black;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                font-size: large;
+                cursor: pointer;
+            ">Add to Cart</button>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</body>
+
+</html>
