@@ -1,13 +1,25 @@
 p {
-    font-family: Roboto, Arial;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
 body {
+    font-family: Roboto, Arial;
     margin: 0;
     padding-top: 80px;
-    padding-left: 96px;
+    padding-left: 150px;
     padding-right: 24px;
     background-color: rgb(250, 245, 245);
+}
+
+@media (min-width: 800px) {
+    body {
+        padding-left: 150px;
+    }
+}
+
+@media (max-width: 799px) {
+    body {
+        padding-left: 96px;
+    }
 }

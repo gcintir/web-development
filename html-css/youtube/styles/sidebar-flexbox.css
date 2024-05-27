@@ -4,17 +4,33 @@
     bottom: 0;
     top: 55px;
     background-color: white;
-    width: 72px;
     z-index: 200;
 }
 
 .sidebar-link {
     height: 76px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+@media (min-width: 800px) {
+    .sidebar {
+        width: 120px;
+    }
+    .sidebar-link {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 799px) {
+    .sidebar {
+        width: 72px;
+    }
+    .sidebar-link {
+        flex-direction: column;
+    }
 }
 
 .sidebar-link:hover {
@@ -27,6 +43,5 @@
 }
 
 .sidebar-link div {
-    font-family: Roboto, Arial;
     font-size: 10px;
 }
