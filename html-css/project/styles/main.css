@@ -120,20 +120,51 @@ section {
 
 @media (max-width: 710px) {
     main {
-     font-size: 12px;
+        font-size: 12px;
     }
- }
- 
- @media (max-width: 295px) {
-     main {
-      font-size: 10px;
-     }
+}
+
+@media (max-width: 295px) {
+    main {
+        font-size: 10px;
+    }
 }
 
 
 /**
 ** Feature Section Media Queries
 **/
+
+@media (max-width: 1350px) {
+    .features-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1025px) {
+    .features-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1350px) {
+    .features {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 600px) {
+    .features {
+        font-size: 0.65em;
+    }
+}
+
+
+@media (max-width: 520px) {
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+}
 
 
 .pricing {
