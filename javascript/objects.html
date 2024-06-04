@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        const product = {
+            name: 'socks',
+            price: 1090,
+            rating: {
+                stars: 4.5,
+                count: 20
+            },
+            fun: function func1 () {
+                console.log('function inside object');
+            }
+        };
+        product.inStock = true;
+        console.log(product);
+        delete product.inStock;
+        console.log(product);
+        console.log(typeof product);
+        product.fun();
+        console.log(JSON.stringify(product));
+        localStorage.setItem('message', 'hello');
+        console.log(localStorage.getItem('message'));
+        localStorage.removeItem('message');
+    </script>
+</body>
+</html>
