@@ -185,7 +185,7 @@ section {
 }
 
 .contact-title {
-    margin-bottom: 8em;
+    margin-bottom: 5em;
     margin-left: 10em;
     margin-right: 10em;
 }
@@ -202,4 +202,47 @@ section {
     font-size: 1.2em;
     text-align: center;
     color: rgb(22, 0, 66);
+}
+
+.contact-form {
+    background-color: rgb(19,22,26);
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.contact-form input, textarea {
+    background-color: rgb(66, 67, 70);
+    width: 35em;
+    height: 3em;
+    margin: 1em;
+    border: none;
+    border-radius: 1em;
+}
+
+.contact-form textarea {
+    height: 6em;
+}
+
+.contact-form input::placeholder, textarea::placeholder {
+    color: rgb(219, 143, 44);
+    font-size: 1em;
+    padding-left: 0.5em;
+}
+
+.contact-form input, textarea {
+    color: rgb(219, 143, 44);
+    font-size: 1em;
+    padding-left: 0.5em;
+}
+
+.contact-form button {
+    background-color: rgb(219, 143, 44);
+    border: none;
+    border-radius: 1em;
+    width: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
 }

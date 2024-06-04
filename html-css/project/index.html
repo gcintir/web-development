@@ -150,10 +150,30 @@
                         If you have any question or just want to say hi, it is time to reach out. We will get back to you as soon as possible
                     </p>
                 </div>
+                <div class="contact-form">
+                    <div>
+                        <input id="contact_name" type="text" placeholder="Name">
+                    </div>
+                    <div>
+                        <input id="contact_email" type="email" placeholder="Email">
+                    </div>
+                    <div>
+                        <input id="contact_subject" type="text" placeholder="Subject">
+                    </div>
+                    <div>
+                        <textarea id="contact_message" placeholder="Message"></textarea>
+                    </div>
+                    <div>
+                        <button onclick="sendEmail(
+                            document.getElementById('contact_name').value,
+                            document.getElementById('contact_email').value,
+                            document.getElementById('contact_subject').value,
+                            document.getElementById('contact_message').value)">SEND MESSAGE</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-
 </body>
 
 </html>
