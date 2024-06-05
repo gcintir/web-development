@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+</head>
+<body>
+    <div>
+        YouTube Subscribe Button
+    </div>
+    <button id="subscribe-button" onclick="subscribeYoutube()">Subscribe</button>
+    
+    <hr>
+
+    <div>
+        Amazon Shipping Calculator
+    </div>
+    <div>
+        Order under $40 = +$10 shipping
+    </div>
+    <div>
+        Order over $40 = FREE shipping
+    </div>
+    <input type="text" id="order-cost-input" onkeydown="checkEventForEnterAction(event)">
+    <button id="shipping-calculate-button" onclick="calculateShipping()">Calculate</button>
+    <div>
+        <p id="shipping-info"></p>
+    </div>
+
+    <script>
+        function checkEventForEnterAction (event) {
+            if (event.key === 'Enter') {
+                calculateShipping();
+            }
+        }
+        function subscribeYoutube() {
+            const button = document.getElementById('subscribe-button');
+            if (button.innerHTML === 'Subscribe') {
+                button.innerHTML = 'Subscribed';
+            } else {
+                button.innerHTML = 'Subscribe';
+            }
+        }
+        function calculateShipping () {
+            let orderCost = parseInt(document.getElementById('order-cost-input').value);
+            if (orderCost < 40) {
+                orderCost += 10;
+            }
+            document.querySelector('#shipping-info').innerHTML = '$' + orderCost;
+        }
+    </script>
+</body>
+</html>
