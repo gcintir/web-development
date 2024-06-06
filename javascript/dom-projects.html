@@ -4,12 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Projects</title>
+    <style>
+        .subscribe-button {
+            border: none;
+            background-color: black;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .is-subscribed {
+            background-color: rgb(240, 240, 240);
+            color: black;
+        }
+
+        .cost-input {
+            font-size: 15px;
+            padding: 10px;
+        }
+        .calculate-button {
+            background-color: green;
+            border: none;
+            color: white;
+            padding: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div>
         YouTube Subscribe Button
     </div>
-    <button id="subscribe-button" onclick="subscribeYoutube()">Subscribe</button>
+    <button class="subscribe-button" onclick="subscribeYoutube()">Subscribe</button>
     
     <hr>
 
@@ -22,8 +54,8 @@
     <div>
         Order over $40 = FREE shipping
     </div>
-    <input type="text" id="order-cost-input" onkeydown="checkEventForEnterAction(event)">
-    <button id="shipping-calculate-button" onclick="calculateShipping()">Calculate</button>
+    <input type="text" class="order-cost-input cost-input" onkeydown="checkEventForEnterAction(event)">
+    <button id="shipping-calculate-button" class="calculate-button" onclick="calculateShipping()">Calculate</button>
     <div>
         <p id="shipping-info"></p>
     </div>
@@ -35,15 +67,16 @@
             }
         }
         function subscribeYoutube() {
-            const button = document.getElementById('subscribe-button');
+            const button = document.querySelector('.subscribe-button');
             if (button.innerHTML === 'Subscribe') {
                 button.innerHTML = 'Subscribed';
+                button.classList.add('is-subscribed')
             } else {
                 button.innerHTML = 'Subscribe';
             }
         }
         function calculateShipping () {
-            let orderCost = parseInt(document.getElementById('order-cost-input').value);
+            let orderCost = parseInt(document.querySelector('.order-cost-input').value);
             if (orderCost < 40) {
                 orderCost += 10;
             }
