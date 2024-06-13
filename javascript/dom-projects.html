@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +28,7 @@
             font-size: 15px;
             padding: 10px;
         }
+
         .calculate-button {
             background-color: green;
             border: none;
@@ -35,14 +37,31 @@
             font-size: 15px;
             cursor: pointer;
         }
+
+        .activity-btn {
+            background-color: rgb(211, 210, 210);
+            border: none;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;        
+        }
+
+        .activity-btn-on {
+            background-color: black;
+            color: aliceblue;
+        }
     </style>
 </head>
+
 <body>
     <div>
         YouTube Subscribe Button
     </div>
     <button class="subscribe-button" onclick="subscribeYoutube()">Subscribe</button>
-    
+
     <hr>
 
     <div>
@@ -60,8 +79,96 @@
         <p id="shipping-info"></p>
     </div>
 
+    <hr>
+
+    <button id="9a-btn">9a</button>
+    <button id="9b-btn" onclick="{
+        document.getElementById('9b-btn').innerHTML = '9b done';
+    }">9b</button>
+
+    <hr>
+
+    <button id="heads-btn" onclick="{
+        document.getElementById('choose-info').innerText = 'You chose: heads';
+    }">heads</button>
+    <button id="tails-btn" onclick="{
+        document.getElementById('choose-info').innerText = 'You chose: tails';
+    }">tails</button>
+    <p id="choose-info"></p>
+
+    <hr>
+
+    <input type="text" id="name-input" onkeyup="checkNameEventForEnterAction(event)">
+    <button id="name-btn" onclick="{
+        const nameValue = document.getElementById('name-input').value ? document.getElementById('name-input').value : 'unknown';
+        document.getElementById('name-info').innerText = nameValue;
+    }">Submit</button>
+    <p id="name-info"></p>
+
+    <hr>
+
+    <button onclick="updateCartQuantity(1)">Add to Cart</button>
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(-1)">Remove from Cart</button>
+    <button onclick="updateCartQuantity(-2)">-2</button>
+    <p id="cart-info"></p>
+
+    <hr>
+
+    <button class="activity-btn" id="gaming-btn" onclick="{
+        document.getElementById('gaming-btn').classList.toggle('activity-btn-on');
+    }">Gaming</button>
+    <button class="activity-btn" id="music-btn" onclick="{
+        document.getElementById('music-btn').classList.toggle('activity-btn-on');
+    }">Music</button>
+    <button class="activity-btn" id="tech-btn" onclick="{
+        document.getElementById('tech-btn').classList.toggle('activity-btn-on');
+    }">Tech</button>
+
+    <hr>
+
+    <input type="text" id="cost-input">
+    <button onclick="{
+        let cost = document.getElementById('cost-input').value ? parseInt(document.getElementById('cost-input').value) : 0;
+        if (cost === 0 ) {
+            document.getElementById('ship-info').innerText = 'invalid cost';
+            document.getElementById('ship-info').style = 'color: red';
+        } else {
+            document.getElementById('ship-info').innerText = 'cost: ' + cost;
+            document.getElementById('ship-info').style = 'color: black';
+        }
+    }">Calculate</button>
+    <p id="ship-info"></p>
+
     <script>
-        function checkEventForEnterAction (event) {
+
+        displayCartQuantity();
+
+        function displayCartQuantity() {
+            const info = 'Cart quantity: ' + getCartQuantity().quantity;
+            document.getElementById('cart-info').innerText = info;
+        }
+
+        function updateCartQuantity(amount = 0) {
+            let cartQuantityData = getCartQuantity();
+            cartQuantityData.quantity += amount;
+            if (cartQuantityData.quantity <= 0) {
+                cartQuantityData.quantity = 0;
+            }
+            saveCartQuantity(cartQuantityData);
+            displayCartQuantity();
+        }
+
+        function getCartQuantity() {
+            let cartQuantityData = localStorage.getItem('cartQuantityData') ? JSON.parse(localStorage.getItem('cartQuantityData')) : { quantity: 0 };
+            return cartQuantityData;
+        }
+
+        function saveCartQuantity(cartQuantityData) {
+            localStorage.setItem('cartQuantityData', JSON.stringify(cartQuantityData));
+        }
+
+        function checkEventForEnterAction(event) {
             if (event.key === 'Enter') {
                 calculateShipping();
             }
@@ -73,15 +180,23 @@
                 button.classList.add('is-subscribed')
             } else {
                 button.innerHTML = 'Subscribe';
+                button.classList.remove('is-subscribed');
             }
         }
-        function calculateShipping () {
+        function calculateShipping() {
             let orderCost = parseInt(document.querySelector('.order-cost-input').value);
             if (orderCost < 40) {
                 orderCost += 10;
             }
             document.querySelector('#shipping-info').innerHTML = '$' + orderCost;
         }
+
+        function checkNameEventForEnterAction(event) {
+            const nameValue = document.getElementById('name-input').value ? document.getElementById('name-input').value : 'unknown';
+            document.getElementById('name-info').innerText = nameValue;
+        }
+
     </script>
 </body>
+
 </html>
