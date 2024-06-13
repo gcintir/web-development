@@ -1,5 +1,6 @@
 main {
     font-size: 16x;
+    width: 100%;
 }
 
 section {
@@ -24,6 +25,7 @@ section {
 .home h1 {
     font-weight: 500;
     font-size: 3em;
+    width: 100%;
 }
 
 .home span {
@@ -34,14 +36,29 @@ section {
     margin: 24px 0px 0px 0px;
     font-weight: 300;
     font-size: 1.8em;
+    width: 100%;
 }
 
 
+/**
+** Home Section Media Queries
+**/
+
+@media (max-width: 710px) {
+    main {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 295px) {
+    main {
+        font-size: 10px;
+    }
+}
 
 .features {
     width: 100%;
     height: 100vh;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +67,7 @@ section {
 }
 
 .features-title {
-    margin-bottom: 8em;
+    margin-bottom: 6em;
     margin-left: 10em;
     margin-right: 10em;
 }
@@ -60,6 +77,7 @@ section {
     font-size: 4em;
     text-align: center;
     color: rgb(22, 0, 66);
+    margin-top: 1em;
 }
 
 .features-title p {
@@ -114,22 +132,6 @@ section {
     font-size: 0.9em;
 }
 
-/**
-** Home Section Media Queries
-**/
-
-@media (max-width: 710px) {
-    main {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 295px) {
-    main {
-        font-size: 10px;
-    }
-}
-
 
 /**
 ** Feature Section Media Queries
@@ -139,6 +141,9 @@ section {
     .features-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .features {
+        font-size: 0.65em;
+    }
 }
 
 @media (max-width: 1025px) {
@@ -147,22 +152,12 @@ section {
     }
 }
 
-@media (max-width: 1350px) {
-    .features {
-        font-size: 0.7em;
-    }
-}
-
-@media (max-width: 600px) {
-    .features {
-        font-size: 0.65em;
-    }
-}
-
-
 @media (max-width: 520px) {
     .features-container {
         grid-template-columns: 1fr;
+    }
+    .features {
+        font-size: 0.45em;
     }
 }
 
@@ -170,7 +165,6 @@ section {
 .pricing {
     width: 100%;
     height: 100vh;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,7 +173,8 @@ section {
 }
 
 .pricing-title {
-    margin-bottom: 5em;
+    margin-top: 1em;
+    margin-bottom: 4em;
     margin-left: 10em;
     margin-right: 10em;
 }
@@ -199,14 +194,15 @@ section {
 }
 
 .pricing-options {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .pricing-option {
     width: 25em;
     height: 25em;
     background-color: rgba(229, 231, 235, 0.7);
+    box-shadow: 2px 2px 2px 0px rgba(229, 231, 235, 0.7);
     margin: 1em;
     display: flex;
     flex-direction: column;
@@ -220,7 +216,7 @@ section {
 
 .pricing-option-name p {
     font-weight: bold;
-    font-size: large;
+    font-size: 1.5em;
 }
 
 .pricing-option-detail {
@@ -229,7 +225,7 @@ section {
 }
 
 .pricing-option-detail p {
-    font-size: medium;
+    font-size: 1em;
 }
 
 
@@ -240,7 +236,7 @@ section {
 }
 
 .pricing-option-features p {
-    font-size: small;
+    font-size: 0.8em;
     margin-top: 2em;    
     display: inline-block;
     vertical-align: bottom;
@@ -257,17 +253,39 @@ section {
     border: none;
     cursor: pointer;
     font-family: "Inter", sans-serif;
-    font-size: large;
+    font-size: 1.5em;
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     border-radius: 10px;
+}
+
+/**
+** Pricing Section Media Queries
+**/
+
+
+@media (max-width: 1295px) {
+    .pricing-options {
+        grid-template-columns: 1fr 1fr;
+    }
+    .pricing {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 525px) {
+    .pricing-options {
+        grid-template-columns: 1fr;
+    }
+    .pricing {
+        font-size: 0.6em;
+    }
 }
 
 .contact {
     width: 100%;
     height: 100vh;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -276,7 +294,7 @@ section {
 }
 
 .contact-title {
-    margin-bottom: 5em;
+    margin-bottom: 4em;
     margin-left: 10em;
     margin-right: 10em;
 }
@@ -336,4 +354,20 @@ section {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     cursor: pointer;
+}
+
+/**
+** Contact Section Media Queries
+**/
+
+@media (max-width: 875px) {
+    .contact {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 440px) {
+    .contact {
+        font-size: 0.6em;
+    }
 }
