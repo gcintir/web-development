@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+
+<body>
+    <button id="action-btn" onclick="updateButtonText()">
+        Start
+    </button>
+    <button id="add-to-cart-btn" onclick="updateCartInfo()">Add to cart</button>
+    <div id="cart-info"></div>
+    <script>
+        let cartInfoTimeoutId;
+        function updateButtonText() {
+            setTimeout(function () {
+                document.getElementById('action-btn').innerText = 'Finished!';
+            }, 1000);
+            document.getElementById('action-btn').innerText = 'Loading...';
+        }
+        function updateCartInfo() {
+            if (cartInfoTimeoutId) {
+                clearTimeout(cartInfoTimeoutId);
+            }
+            document.getElementById('cart-info').innerText = 'Added';
+            cartInfoTimeoutId = setTimeout(function () {
+                document.getElementById('cart-info').innerText = '';
+            }, 2000);
+
+        }
+
+        function updateDocumentTitle () {
+            setInterval(function() {
+                let title = document.title;
+                if (title === 'App') {
+                    document.title = '(2) New messages';
+                } else {
+                    document.title = 'App';
+                }
+            }, 1000);
+        }
+        //updateDocumentTitle();
+
+        const arrowFunction = () => {
+          console.log('arrow function');  
+        };
+        arrowFunction();
+
+        const mathProcess = {
+            multiply: (param1, param2) => param1 * param2,
+            sum(param1, param2) {
+                return param1 + param2;
+            }
+        };
+        console.log(mathProcess.multiply(4,5));
+        console.log(mathProcess.sum(1,1));
+
+    </script>
+</body>
+
+</html>
