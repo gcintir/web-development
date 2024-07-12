@@ -12,7 +12,7 @@ class Cart {
         this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
     
         if (!this.cartItems) {
-            cart.cartItems = [
+            this.cartItems = [
               {
                 productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
                 quantity: 2,
@@ -78,11 +78,11 @@ class Cart {
       }
 }
 
-const cart = new Cart("cart-oop");
-const businessCart = new Cart("cart-business");
+const cart = new Cart("cart");
+//const businessCart = new Cart("cart-business");
 
 console.log(cart);
-console.log(businessCart);
+//console.log(businessCart);
 
 export function updateQuantity(productId, newQuantity) {
   let matchingItem;
